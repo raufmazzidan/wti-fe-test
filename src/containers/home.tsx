@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <section className="flex items-center justify-center h-screen">
+    <section className="flex items-center flex-col gap-6 justify-center h-screen">
       <Link href="/counter">
-        <Button>Lets Get Strated</Button>
+        <Button>Lets Get Started</Button>
       </Link>
     </section>
   );

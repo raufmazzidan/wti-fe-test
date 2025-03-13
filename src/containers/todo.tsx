@@ -1,7 +1,7 @@
 "use client";
 
 import TaskWrapper from "@/components/task-wrapper";
-import classFusion from "@/utils/class-fusion";
+import TodoCard from "@/components/todo-card";
 
 import { useEffect, useState } from "react";
 
@@ -64,26 +64,11 @@ const Todo = () => {
         ) : (
           <>
             {todo ? (
-              <div className="border rounded w-sm border-violet-500 bg-violet-50 shadow p-4">
-                <p className="text-xl font-semibold">
-                  [{todo.id}] {todo.title}
-                </p>
-                <div
-                  className={classFusion(
-                    "px-2 py-1 rounded-xs inline-flex text-xs uppercase font-semibold bg-red-500 text-white my-2",
-                    {
-                      "bg-green-600": todo.completed,
-                    }
-                  )}
-                >
-                  {todo.completed ? "Completed" : "Not Completed"}
-                </div>
-                <p className="text-xs leading-4 text-gray-600">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry&apos;s
-                  standard dummy text ever since the 1500s
-                </p>
-              </div>
+              <TodoCard
+                completed={todo.completed}
+                id={todo.id}
+                title={todo.title}
+              />
             ) : (
               <p>todo is not found</p>
             )}
